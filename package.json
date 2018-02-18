@@ -1,5 +1,5 @@
 {
-  "name": "form-validation",
+  "name": "@yutangshi/form-validation",
   "version": "1.0.1",
   "description": "Validate each field data format in JavaScript ",
   "main": "index.js",
@@ -22,5 +22,6 @@
   "homepage": "https://github.com/YutangShi/form-validation",
   "devDependencies": {
     "assert": "^1.4.1"
-  }
+  },
+  "dependencies": {}
 }
