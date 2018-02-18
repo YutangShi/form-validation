@@ -44,8 +44,9 @@ module.exports = class formValidation {
 
         const rule = new RegExp("^[\u4e00-\u9fa5_a-zA-Z]+$");
         if (!rule.test(userName)) {
+            message = message || '您的姓名只能輸入中文或英文。'
             this.response.status = 512
-            this.response.message = (message !== "") ? message : '您的姓名只能輸入中文或英文。'
+            this.response.message = message
             return this.response
         }
         return this.response
@@ -60,8 +61,9 @@ module.exports = class formValidation {
 
         const rule = new RegExp("^[09]{2}[0-9]{8}$");
         if (!rule.test(mobile)) {
+            message = message || '您輸入的手機格式不正確。'
             this.response.status = 512
-            this.response.message = (message !== "") ? message : '您輸入的手機格式不正確。'
+            this.response.message = message
             return this.response
         }
         return this.response
@@ -75,8 +77,9 @@ module.exports = class formValidation {
 
         const rule = new RegExp("^[^\s]+@[^\s]+\.[^\s]+$");
         if (!rule.test(email)) {
+            message = message || '您輸入Email格式不正確。'
             this.response.status = 512
-            this.response.message = (message !== "") ? message : '您輸入Email格式不正確。'
+            this.response.message = message
             return this.response
         }
         return this.response
@@ -91,8 +94,9 @@ module.exports = class formValidation {
 
         const rule = new RegExp("^[A-Z]{1}[0-9]{9}$");
         if (!rule.test(email)) {
+            message = message || '您輸入身分證字號格式不正確。'
             this.response.status = 512
-            this.response.message = (message !== "") ? message : '您輸入身分證字號格式不正確。'
+            this.response.message = message
             return this.response
         }
         return this.response
@@ -113,8 +117,9 @@ module.exports = class formValidation {
 
         const rule = new RegExp("^\d{4}-\d{4}-\d{4}-\d{4}$");
         if (!rule.test(creditCard)) {
+            message = message || '您輸入信用卡格式不正確。'
             this.response.status = 512
-            this.response.message = (message !== "") ? message : '您輸入信用卡格式不正確。'
+            this.response.message = message
             return this.response
         }
         return this.response
