@@ -41,7 +41,7 @@ const res = form.email("service@com");
 // }
 
 // Validate identity card input of Taiwan. 驗證台灣身分證字號。
-const res = form.email("service@com");
+const res = form.idcard("11233211");
 // response format
 // { 
 //	status: 512, 
