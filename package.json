@@ -1,6 +1,6 @@
 {
   "name": "@yutangshi/form-validation",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Validate each field data format in JavaScript ",
   "main": "index.js",
   "scripts": {

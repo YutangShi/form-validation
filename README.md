@@ -47,6 +47,15 @@ const res = form.email("service@com");
 //	status: 512, 
 //	message: "您輸入身分證字號格式不正確。"
 // }
+
+
+// Validate credit card input with custom message. 驗證信用卡資料格式，套用客製訊息。
+const res = form.email("11-2222-2345-2242","卡號不正確。");
+// response format
+// { 
+//	status: 512, 
+//	message: "卡號不正確。"
+// }
 ```
 
 
