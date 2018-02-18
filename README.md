@@ -14,23 +14,39 @@ npm i form-validation --save
 ```
 
 ```js
-const form = new formValidation(); // Get validate object
+const form = new formValidation(); // Get the validation object
 
-const res = form.userName("Allen"); // Validate user name input.
+// Validate user name input. 驗證姓名不可為數字或特殊符號。
+const res = form.userName("Allen");
 // response format
 // { 
 //	status: 200, 
 //	message: ""
 // }
 
-const res = form.mobile("Allen"); // Validate mobile input.
+// Validate mobile input. 驗證手機號碼必須為09開頭且為10碼
+const res = form.mobile("001399302");
 // response format
 // { 
 //	status: 512, 
 //	message: "您輸入的手機格式不正確。"
 // }
 
+// Validate email input. 驗證Email必須包含＠符號以及.的網域名稱。
+const res = form.email("service@com");
+// response format
+// { 
+//	status: 512, 
+//	message: "您輸入Email格式不正確。"
+// }
 
+// Validate identity card input of Taiwan. 驗證台灣身分證字號。
+const res = form.email("service@com");
+// response format
+// { 
+//	status: 512, 
+//	message: "您輸入身分證字號格式不正確。"
+// }
 ```
 
 

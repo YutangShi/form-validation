@@ -14,7 +14,12 @@ module.exports = class formValidation {
         }
     }
 
+    clean() {
+        this.response.message = ""
+    }
+
     empty(input) {
+        this.clean()
         if (typeof input === "undefined" || input === "") {
             this.response.message = this.messageContext.isEmpty
             this.response.status = 511
@@ -24,7 +29,8 @@ module.exports = class formValidation {
         }
     }
 
-    userName(userName) {
+    userName(userName, message) {
+        this.clean()
         if (this.empty(userName)) {
             return this.response
         }
@@ -39,13 +45,15 @@ module.exports = class formValidation {
         const rule = new RegExp("^[\u4e00-\u9fa5_a-zA-Z]+$");
         if (!rule.test(userName)) {
             this.response.status = 512
-            this.response.message = '您的姓名不該包含數字。'
+            this.response.message = (message !== "") ? message : '您的姓名只能輸入中文或英文。'
             return this.response
         }
         return this.response
     }
 
-    mobile(mobile) {
+    mobile(mobile, message) {
+        this.clean()
+
         if (this.empty(mobile)) {
             return this.response
         }
@@ -53,13 +61,14 @@ module.exports = class formValidation {
         const rule = new RegExp("^[09]{2}[0-9]{8}$");
         if (!rule.test(mobile)) {
             this.response.status = 512
-            this.response.message = '您輸入的手機格式不正確。'
+            this.response.message = (message !== "") ? message : '您輸入的手機格式不正確。'
             return this.response
         }
         return this.response
     }
 
-    email(email) {
+    email(email, message) {
+        this.clean()
         if (this.empty(email)) {
             return this.response
         }
@@ -67,21 +76,23 @@ module.exports = class formValidation {
         const rule = new RegExp("^[^\s]+@[^\s]+\.[^\s]+$");
         if (!rule.test(email)) {
             this.response.status = 512
-            this.response.message = '您輸入Email格式不正確。'
+            this.response.message = (message !== "") ? message : '您輸入Email格式不正確。'
             return this.response
         }
         return this.response
     }
 
-    idcard(idcard) {
-        if(this.empty(idcard)) {
+    idcard(idcard, message) {
+        this.clean()
+
+        if (this.empty(idcard)) {
             return this.response
         }
 
         const rule = new RegExp("^[A-Z]{1}[0-9]{9}$");
         if (!rule.test(email)) {
             this.response.status = 512
-            this.response.message = '您輸入身分證字號格式不正確。'
+            this.response.message = (message !== "") ? message : '您輸入身分證字號格式不正確。'
             return this.response
         }
         return this.response
