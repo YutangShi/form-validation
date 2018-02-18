@@ -5,7 +5,7 @@
 [![npm](https://img.shields.io/npm/dm/localeval.svg)](https://www.npmjs.com/package/@yutangshi/form-validation)
 [![Greenkeeper badge](https://badges.greenkeeper.io/yutangshi/form-validation.svg)](https://greenkeeper.io/)
 
-Validate data fields formet in JavaScript
+Validate data fields format in JavaScript
 
 ## Usage
 
@@ -50,7 +50,7 @@ const res = form.idcard("11233211");
 // }
 
 
-// Validate credit card input with custom message. 驗證信用卡資料格式，套用客製訊息。
+// Validate credit card input with customize message. 驗證信用卡資料格式，套用客製訊息。
 const res = form.email("11-2222-2345-2242","卡號不正確。");
 // response format
 // { 
