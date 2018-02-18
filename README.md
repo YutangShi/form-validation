@@ -10,10 +10,11 @@ Validate data fields formet in JavaScript
 ## Usage
 
 ```bash
-npm i form-validation --save
+npm i @yutangshi/form-validation --save
 ```
 
 ```js
+const formValidation = require('formValidation');
 const form = new formValidation(); // Get the validation object
 
 // Validate user name input. 驗證姓名不可為數字或特殊符號。
