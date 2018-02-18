@@ -1,0 +1,26 @@
+{
+  "name": "form-validation",
+  "version": "1.0.1",
+  "description": "Validate each field data format in JavaScript ",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YutangShi/form-validation.git"
+  },
+  "keywords": [
+    "form",
+    "validation"
+  ],
+  "author": "AllenShi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YutangShi/form-validation/issues"
+  },
+  "homepage": "https://github.com/YutangShi/form-validation",
+  "devDependencies": {
+    "assert": "^1.4.1"
+  }
+}
