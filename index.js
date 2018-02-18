@@ -98,4 +98,25 @@ module.exports = class formValidation {
         return this.response
     }
 
+    creditCard(creditCard, message) {
+        this.clean()
+
+        if (this.empty(creditCard)) {
+            return this.response
+        }
+
+        if (typeof creditCard !== 'string') {
+            this.response.message = this.messageContext.isString
+            this.response.status = 510
+            return this.response
+        }
+
+        const rule = new RegExp("^\d{4}-\d{4}-\d{4}-\d{4}$");
+        if (!rule.test(creditCard)) {
+            this.response.status = 512
+            this.response.message = (message !== "") ? message : '您輸入信用卡格式不正確。'
+            return this.response
+        }
+        return this.response
+    }
 }
