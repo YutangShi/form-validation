@@ -16,6 +16,10 @@ npm i form-validation --save
 ```js
 var dataValid new dataValidation() // Get validate object
 const res = form.userName("Allen");
+console.log('姓名驗證:' + JSON.stringify(res))
+assert.deepEqual(
+    res, { status: 200, message: "" }
+)
 ```
 
 
