@@ -50,8 +50,9 @@ const res = form.idcard("11233211");
 // }
 
 
-// Validate credit card input with customize message. 驗證信用卡資料格式，套用客製訊息。
-const res = form.email("11-2222-2345-2242","卡號不正確。");
+// Validate credit card input with customize message.
+// 驗證信用卡16碼格資料格式，套用客製訊息。
+const res = form.creditCard("11-2222-2345-2242","卡號不正確。");
 // response format
 // { 
 //	status: 512, 
